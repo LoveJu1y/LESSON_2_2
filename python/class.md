@@ -71,3 +71,72 @@ a="ooo"
 ```
 上面构造的对象是1，“000”，而不是a
 
+
+### 操作符
+ - 一元操作符 -x
+ - 二元操作符 a+b，a**b（幂） 
+ - 三元操作符 条件表达式
+ - 拉姆达表达式优先级最低
+ - **<font color=seagreen>or and not是逻辑运算符</font>**
+ - **<font color=brown>in ，not in， is等也是</font>**
+ - 赋值语句
+    - +=，-=，*=，/=，//=，%=，**=等等都可以使用
+  
+### 1.41 整数类型
+- **<font color=tomato>整数，可以取正负无穷大</font>**，取决于计算机内存
+- 表示
+  - 二进制0b
+  - 八进制0o
+  - 十六进制0x
+  - 还可以分节 0b_10_000_100小数也可以，增强可读性
+### 1.4.2实数类型
+- 就是float，不存在double什么的
+- 科学计数法：1.02e-3这样
+- **<font color=tomato>有最大值和最小值</font>**，同时有最小误差。
+- 有效数组16位，精确数字15位(0.1在python不能精确表示，0.1+0.1 + 0.1 - 0.3 ！=2)
+
+### 复数
+* 虚数后面加一个j，即a+bj
+* 对于复数c，c.real和c.imag分别是实部和虚部
+
+### 数值运算
+- 重点是移位
+- <<,相当于乘2，,2017<<3=2017*2**3
+- ’>>‘相当与整数除法，1222>>10,1222//2**10
+- | ,^,&,~,分别是位运算操作符
+
+### 1.4.5数值函数
+- **<font color=yellowgreen>就是用int(x),这样构造一个int类型的,但是，他似乎就是截断构造的</font>**
+- int("123")=123,float同理
+- complex(re,im),合成复数,**python不支持函数重载**
+- 内置函数，round(x[,n]),返回x的四舍五入值，还可以加一个n，保留n位小数，还有min，max，pow(x,y[n,])等顾名思义的函数,**<font color=brown>pow可以求x的y次方除以n得到的余数（相当于%），分开单独计算很慢。</font>**
+  
+## 1.5
+### 1.5.1 数学模块
+-模块math，关键词import和from
+```python
+import math
+a= math.pi #最好的导入方式，不会出现太多变量，倒是名称重复
+b=math.inf
+c=math.e#自然对数
+from math import pi
+from math import *#导入所有标识符，不建议使用
+```
+### 数学函数
+- math.fsum([1,2,3,4]):精确求和（参数是一个列表）
+- math.gcd(x,y)：最大公约数
+- ...很多，用的时候查一下就知道,指数，阶乘，对数，等等
+
+## 1.6 基本输入输出
+- 输入输出本质都是以字符串，如有需要，需要使用类似int（）的函数
+- 基本输出print()
+  - <font color=yellowgreen>print(*objects,sep=" ",end="\n",file=sys.stdout，flush=False)</font>
+   #object就是第一个参数，用一个元组将实际参数打包，**<font color=royalblue>sep就是分隔符</font>**，各个要打印的字符串间用空格最为分割（当然可以自己设置），**<font color=orange>end就是结束符号，默认是换行</font>**,**file可以设置打印到哪一个文件，默认是stdout，就是屏幕。**最后的flush表示要不要清空缓冲区。
+  ```python
+  ddd="aaa"
+  print('he sum is %s'%ddd)#只有一条内容
+
+  print('he sun is %s',ddd)#两个参数输入
+
+
+- 基本输入 input(),raw_input(),eval()
