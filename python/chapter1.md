@@ -8,7 +8,7 @@
 
 ###缩进
 - 缩进位置是逻辑行的行首
-- **<font color=amber>空格和tab键建议不要混用</font>**
+- **<font color=plum>空格和tab键建议不要混用</font>**
   
 ###标识符定义
 - 建议使用ASCII码，以下划线或者字母开头
@@ -35,7 +35,7 @@
   - python中表示其本征值的方式与具体实现有关
   - cpython 实现：对象本征值是它在内存中的地址
   - 类似于人的身份证
-- 本征值特征：**<font color=amber>唯一性，有常性（已经创设无法改变）</font>**
+- 本征值特征：**<font color=plum>唯一性，有常性（已经创设无法改变）</font>**
 - 本征值函数id();
  ```python
  print(id(1.1))
@@ -44,7 +44,7 @@
  ```
  或许就按照地址来理解吧
 
-- **<font color=amber>型式函数 type()</font>**
+- **<font color=plum>型式函数 type()</font>**
   ```python
   type(1.1)
   type("noo")
@@ -59,7 +59,7 @@
   a,b=b,a#互换
   ```
   逗号，是一个元组操作符，相当于把右侧的元组赋值给左侧。
-- **<font color=amber>is 关键字，总是监测引用的是不是同一个 对象！</font>**！
+- **<font color=plum>is 关键字，总是监测引用的是不是同一个 对象！</font>**！
 ### 文字
 它是内置类型的（类似一种宏定义）常值
 ###量
@@ -77,13 +77,13 @@ a="ooo"
  - 二元操作符 a+b，a**b（幂） 
  - 三元操作符 条件表达式
  - 拉姆达表达式优先级最低
- - **<font color=seagreen>or and not是逻辑运算符</font>**
- - **<font color=brown>in ，not in， is等也是</font>**
+ - **<font color=plum>or and not是逻辑运算符</font>**
+ - **<font color=plum>in ，not in， is等也是</font>**
  - 赋值语句
     - +=，-=，*=，/=，//=，%=，**=等等都可以使用
   
 ### 1.41 整数类型
-- **<font color=tomato>整数，可以取正负无穷大</font>**，取决于计算机内存
+- **<font color=plum>整数，可以取正负无穷大</font>**，取决于计算机内存
 - 表示
   - 二进制0b
   - 八进制0o
@@ -92,7 +92,7 @@ a="ooo"
 ### 1.4.2实数类型
 - 就是float，不存在double什么的
 - 科学计数法：1.02e-3这样
-- **<font color=tomato>有最大值和最小值</font>**，同时有最小误差。
+- **<font color=plum>有最大值和最小值</font>**，同时有最小误差。
 - 有效数组16位，精确数字15位(0.1在python不能精确表示，0.1+0.1 + 0.1 - 0.3 ！=2)
 
 ### 复数
@@ -106,10 +106,10 @@ a="ooo"
 - | ,^,&,~,分别是位运算操作符
 
 ### 1.4.5数值函数
-- **<font color=yellowgreen>就是用int(x),这样构造一个int类型的,但是，他似乎就是截断构造的</font>**
+- **<font color=plum>就是用int(x),这样构造一个int类型的,但是，他似乎就是截断构造的</font>**
 - int("123")=123,float同理
 - complex(re,im),合成复数,**python不支持函数重载**
-- 内置函数，round(x[,n]),返回x的四舍五入值，还可以加一个n，保留n位小数，还有min，max，pow(x,y[n,])等顾名思义的函数,**<font color=brown>pow可以求x的y次方除以n得到的余数（相当于%），分开单独计算很慢。</font>**
+- 内置函数，round(x[,n]),返回x的四舍五入值，还可以加一个n，保留n位小数，还有min，max，pow(x,y[n,])等顾名思义的函数,**<font color=plum>pow可以求x的y次方除以n得到的余数（相当于%），分开单独计算很慢。</font>**
   
 ## 1.5
 ### 1.5.1 数学模块
@@ -130,8 +130,8 @@ from math import *#导入所有标识符，不建议使用
 ## 1.6 基本输入输出
 - 输入输出本质都是以字符串，如有需要，需要使用类似int（）的函数
 - 基本输出print()
-  - <font color=yellowgreen>print(*objects,sep=" ",end="\n",file=sys.stdout，flush=False)</font>
-   #object就是第一个参数，用一个元组将实际参数打包，**<font color=royalblue>sep就是分隔符</font>**，各个要打印的字符串间用空格最为分割（当然可以自己设置），**<font color=orange>end就是结束符号，默认是换行</font>**,**file可以设置打印到哪一个文件，默认是stdout，就是屏幕。**最后的flush表示要不要清空缓冲区。
+  - <font color=plum>print(*objects,sep=" ",end="\n",file=sys.stdout，flush=False)</font>
+   #object就是第一个参数，用一个元组将实际参数打包，**<font color=plum>sep就是分隔符</font>**，各个要打印的字符串间用空格最为分割（当然可以自己设置），**<font color=plum>end就是结束符号，默认是换行</font>**,**file可以设置打印到哪一个文件，默认是stdout，就是屏幕。**最后的flush表示要不要清空缓冲区。
   ```python
   ddd="aaa"
   print('he sum is %s'%ddd)#只有一条内容
@@ -140,3 +140,8 @@ from math import *#导入所有标识符，不建议使用
 
 
 - 基本输入 input(),raw_input(),eval()
+- 重点是eval（），他表示一个计算式子，比如
+  ```python
+  >>> counter = 1
+  >>> eval('counter + 1')
+  2
