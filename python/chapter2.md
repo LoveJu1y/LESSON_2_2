@@ -129,3 +129,75 @@ finally:
 ```
 无论出现何种情况，最后都执行fianlly
 **说明** ：finally主要是为了防止程序崩溃开辟空间没有释放，资源被占。比如打开的文件即使崩溃都得正确关闭。
+```python
+try:
+    print(1/0)
+finally:
+    print("oops")
+    #触发zerodivisionerror，无论该异常有没有被处理，确保输出oops。
+```
+**也就是说，上面并没有捕获异常并处理**
+- 异常的捕获：异常处理语句2
+```python
+try:
+  suite_try
+except exception_type_1 as exception_object_1:#exception_type_1表示异常类型，可以不写，则认为是所有异常，而as相当于赋值命名，可以后语句块中简单写操作。
+  suite_exc_1
+...#可以有很多这样的except，相当于匹配异常；
+else:
+  suite_els
+finally:
+  suite_fin
+```
+**总结：try-except是最重要的！finally和else可以不需要。**
+
+- 具体？
+python中的异常是有一个库的，全部异常的根类是BaseException，而类Exception是我们需要使用的类，（比如我们需要写一个异常类，需要从这个Exception来继承，然后再往下构造）
+```python
+try:
+    print(1/0)
+except ZeroDivisionError as e:
+    print(type(e))
+    print(str(e))
+finally:
+    print("666")
+```
+```python
+try:
+    print(1/0)
+except (eroDivisionError,NameError) as e:
+    print("not good")
+    
+finally:
+    print("666")
+```
+下面这个例子是用的类
+
+
+### 2.4.4 异常的引发
+```python
+raise[except[from exception_object]]
+raise RuntimeError("something no-good happend")
+```
+抛出异常对象except或者构造并抛出异常类except的异常对象。
+这是抛出了异常，我们没有自己写接受的，所以是python自己的traceback收到。
+```python
+try:
+    raise RuntimeError("999")
+except RuntimeError as e:
+    print(str(e))
+    raise
+#最后再引发上边的异常，相当于给上级报告，（虽然自己的except已经处理过了）
+```
+
+### 输出一点补充
+```python
+ for num1 in range(1,10):
+    for num in range(1,num1+1):
+        num2 = num * num1
+        print('{0:2} * {1:<2} = {2:<2}' .format(num1, num, num2),end='  ')
+    print('\n',end='')
+ ```
+ 这种输出可以控制输出的位宽等
+
+
