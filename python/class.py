@@ -99,21 +99,37 @@
 #         print('{0:2} * {1:<2} = {2:<2}' .format(num1, num, num2),end='  ')
 #     print('\n',end='')
 
-#平均值：
-sum = 0
-idx = 0
-while True:
-    try :
-        a = eval(input("please input a number: \n")) 
-        if a == 0:
-            print('you have stop this process ')
-            break
-        sum += a
-        idx += 1
-    except Exception :
-        print("you sure this is a number ? please do rewrite it")
+
+
+
+# #平均值：
+# sum = 0
+# idx = 0
+# while True:
+#     try :
+#         a = eval(input("please input a number: \n")) 
+#         if a == 0:
+#             print('you have stopped this process ')
+#             break
+#         sum += a
+#         idx += 1
+#     except Exception :
+#         print("are you sure this is a number ? please  reinput it")
         
-if idx == 0:
-    print('the average is 0' )
-else:
-    print('the average is %f' %(sum/idx))
+# if idx == 0:
+#     print('the average is 0' )
+# else:
+#     print('the average is %f' %(sum/idx))
+
+#class 7
+# 汉诺塔
+def hanoi(n,x,y,z):
+    if n >= 1 :
+        hanoi(n-1,x,z,y)
+        print(n,'->',z)
+        hanoi(n-1,y,x,z)
+    return None
+
+hanoi(3,'a','b','c')
+import datetime
+print(datetime.time())
