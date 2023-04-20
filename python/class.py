@@ -132,4 +132,9 @@ def hanoi(n,x,y,z):
 
 hanoi(3,'a','b','c')
 import datetime
-print(datetime.time())
+print(datetime.time().timetuple())
+
+sum=0
+for idx in range(3,7):
+    sum=sum+idx
+print(sum)

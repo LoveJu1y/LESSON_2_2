@@ -223,5 +223,14 @@ def fib2(n):
 - 日期时间模块 datetime
   - 功能：日期和时间处理
   - 日期时间对象分类
-  ```python
-  datetime.MINYEAR
+  
+ **<font color=plum> e~,这一部分也没怎么听进去</font>**
+
+### 3.6.3随机数模块
+random模块
+功能：可以生成伪随机数
+```python
+random.seed(a=None,version=2)#相同的a就可以生成相同的随机数
+random,randint(a,b)#返回闭区a，b中随机整数
+random.choice(Sep)#随机返回序列sep的元素
+random.uniform(a,b)#随机返回a,b闭区间的随机浮点数
